@@ -1,62 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anitta Antony | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <h1>Anitta Antony</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">Anitta Antony</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Motivated Software Developer and bachelor’s student with hands-on experience 
-      in full-stack development, algorithms, and secure system design.
-    </p>
-  </section>
+  <main>
+    <section id="about" class="section">
+      <div class="container about-wrap">
+        <img src="my_picture.jpg" alt="Anitta Antony" class="profile-pic" />
+        <div class="about-text">
+          <h1>About Me</h1>
+          <p>
+            Motivated Software Developer and bachelor’s student with hands-on experience in full-stack development, algorithms, and secure system design. Skilled in Python, Java, SQL, and modern web technologies. Passionate about building scalable, user-focused solutions.
+          </p>
+          <div class="links">
+            <a class="btn" href="mailto:anittaantonyaleena@gmail.com">Email me</a>
+            <a class="btn outline" target="_blank" href="https://github.com/AnittaAntony11">GitHub</a>
+            <a class="btn outline" target="_blank" href="https://weave-haven-m4qd.vercel.app/">Weave Haven Live</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Python | Java | JavaScript | React | Node.js | MongoDB | SQL | Git</p>
-  </section>
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="tags">
+          <li>Python</li><li>Java</li><li>JavaScript</li><li>React</li>
+          <li>Node.js</li><li>Express</li><li>MongoDB</li><li>SQL</li>
+          <li>HTML</li><li>CSS</li><li>Git</li><li>Agile</li>
+          <li>MS Word</li><li>Excel</li><li>PowerPoint</li><li>Access</li>
+        </ul>
+      </div>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div>
-      <h3>Weave Haven – E-Commerce</h3>
-      <a href="https://weave-haven-m4qd.vercel.app/" target="_blank">Live Demo</a> | 
-      <a href="https://github.com/AnittaAntony11" target="_blank">GitHub</a>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <div class="projects-grid">
+          <article class="card">
+            <img src="Screenshot 2025-09-26 102234.png" alt="Weave Haven screenshot" />
+            <div class="card-body">
+              <h3>Weave Haven – E-Commerce</h3>
+              <p>Responsive fashion e-commerce website with product catalog, cart, checkout, wishlist, and admin dashboard.</p>
+              <p class="meta">React, Tailwind CSS, Node.js, Express, MongoDB, JWT, CI/CD</p>
+              <div class="card-actions">
+                <a class="btn small" target="_blank" href="https://weave-haven-m4qd.vercel.app/">Live Demo</a>
+                <a class="btn small outline" target="_blank" href="https://github.com/AnittaAntony11">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img-placeholder">Cook N Cart</div>
+            <div class="card-body">
+              <h3>Cook N Cart – Meal Planner</h3>
+              <p>Desktop application for simple recipes, weekly menus, and auto-generated shopping lists. Agile sprints with Jira and version control on GitHub.</p>
+              <p class="meta">Java/Python (desktop), SQL, Jira, Git</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section alt">
+      <div class="container">
+        <h2>Education</h2>
+        <ul class="list">
+          <li>
+            <strong>B.Sc. Software Development</strong> – Kristianstad University (2023 – Present)
+          </li>
+          <li>
+            <strong>Diploma in Office Automation & Python</strong> – Relent Cyber College (2022 – 2023)
+          </li>
+          <li>
+            <strong>Higher Secondary in Computer Science</strong> – GVHS Neriamangalam (2020 – 2022)
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Work Experience</h2>
+        <ul class="list">
+          <li>
+            <strong>Restaurant Crew Member</strong> – Max Burgers AB, Sweden (May 2024 – Present) • Teamwork, communication, time management, and attention to detail in a fast-paced environment.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <form class="contact-form" action="mailto:anittaantonyaleena@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p class="contact-alt">
+          Or email directly:
+          <a href="mailto:anittaantonyaleena@gmail.com">anittaantonyaleena@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2025 Anitta Antony
     </div>
-    <div>
-      <h3>Cook N Cart – Meal Planner</h3>
-      <p>Desktop app for recipes, weekly menus, and shopping lists.</p>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:anittaantonyaleena@gmail.com">anittaantonyaleena@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/AnittaAntony11" target="_blank">github.com/AnittaAntony11</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Anitta Antony</p>
   </footer>
 </body>
 </html>
