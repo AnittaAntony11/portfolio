@@ -118,47 +118,45 @@ a{color:inherit}
     background:#0f1630;border:1px solid var(--line);border-radius:12px;padding:12px}
   .pill-groups{grid-template-columns:1fr}
 }
+
 /* Desktop polish */
 @media (min-width: 1000px){
   .container{ max-width: 1200px; }
-
-  .hero-wrap{
-    grid-template-columns: 260px 1fr;
-    gap: 36px;
-  }
-
+  .hero-wrap{ grid-template-columns: 260px 1fr; gap: 36px; }
   .avatar{ width: 260px; height: 260px; }
-
   .grid .card-media img{ height: 280px; }
-
   .section{ padding: 96px 0; }
 }
 
 /* Prevent sticky header from overlapping anchor targets on large screens */
-#about,#skills,#projects,#education,#experience,#contact{
-  scroll-margin-top: 90px;
-}
+#about,#skills,#projects,#education,#experience,#contact{ scroll-margin-top: 90px; }
 
 /* Ensure nav is visible on desktop even if the mobile toggle ran before */
-@media (min-width: 721px){
-  .nav{ display: flex !important; }
-}
+@media (min-width: 721px){ .nav{ display: flex !important; } }
 
 /* Safety: images should never overflow */
 img{ max-width: 100%; height: auto; }
-/* 1) Show the whole photo inside the circle */
-.avatar{
-  object-fit: contain;      /* no cropping */
-  background: #0f1630;      /* fill behind if photo doesn't cover */
-}
 
-/* 2) Make the round ring bigger WITHOUT enlarging the photo */
-.avatar-wrap::after{
-  content:"";
-  position:absolute;
-  inset:-18px;              /* how far the ring extends outward; increase to make bigger */
-  border-radius:50%;
-  border:10px solid rgba(124,58,237,.55);   /* ring thickness & color */
-  box-shadow:0 0 0 14px rgba(34,211,238,.22); /* soft outer glow */
-  pointer-events:none;      /* don't block clicks */
+/* -------- Desktop-only avatar positioning (fill circle, show full face) -------- */
+@media (min-width: 900px){
+  .avatar{
+    /* keep existing size rules; just control how the photo sits inside the round */
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+    object-fit: cover;         /* fill the circle */
+    object-position: 50% 32%;  /* tweak 24–38% to perfect the face framing */
+    display: block;
+  }
+
+  /* keep your existing outer ring */
+  .avatar-wrap{ position: relative; }
+  .avatar-wrap::after{
+    content: "";
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    border: 10px solid rgba(124,58,237,.6);
+    box-shadow: 0 0 0 14px rgba(34,211,238,.22);
+    pointer-events: none;
+  }
 }
