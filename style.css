@@ -146,3 +146,19 @@ a{color:inherit}
 
 /* Safety: images should never overflow */
 img{ max-width: 100%; height: auto; }
+/* 1) Show the whole photo inside the circle */
+.avatar{
+  object-fit: contain;      /* no cropping */
+  background: #0f1630;      /* fill behind if photo doesn't cover */
+}
+
+/* 2) Make the round ring bigger WITHOUT enlarging the photo */
+.avatar-wrap::after{
+  content:"";
+  position:absolute;
+  inset:-18px;              /* how far the ring extends outward; increase to make bigger */
+  border-radius:50%;
+  border:10px solid rgba(124,58,237,.55);   /* ring thickness & color */
+  box-shadow:0 0 0 14px rgba(34,211,238,.22); /* soft outer glow */
+  pointer-events:none;      /* don't block clicks */
+}
